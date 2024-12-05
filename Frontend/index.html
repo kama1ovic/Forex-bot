@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forex Bot</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="bg-primary text-white text-center py-4">
+    <h1>Forex Trading Bot</h1>
+  </header>
+  <div class="container mt-5">
+    <div id="dashboard" class="row">
+      <!-- Market Data Section -->
+      <div id="market-data" class="col-md-6">
+        <h2>Market Data</h2>
+        <div id="price" class="mb-3"></div>
+        <canvas id="marketChart" width="400" height="200"></canvas>
+      </div>
+
+      <!-- Trade Actions Section -->
+      <div id="trade-actions" class="col-md-6">
+        <h3>Trade Actions</h3>
+        <button class="btn btn-success" onclick="sendOrder('buy')">Buy</button>
+        <button class="btn btn-danger" onclick="sendOrder('sell')">Sell</button>
+      </div>
+    </div>
+
+    <!-- Trade Settings Section -->
+    <div id="trade-settings" class="mt-4">
+      <h3>Risk Management</h3>
+      <form class="form-inline">
+        <div class="form-group mb-3">
+          <label for="stop-loss" class="mr-2">Stop Loss:</label>
+          <input type="number" class="form-control" id="stop-loss" value="50">
+        </div>
+        <div class="form-group mb-3">
+          <label for="take-profit" class="mr-2">Take Profit:</label>
+          <input type="number" class="form-control" id="take-profit" value="100">
+        </div>
+      </form>
+    </div>
+
+    <!-- Trade History Section -->
+    <div id="trade-history" class="mt-4">
+      <h2>Trade History</h2>
+      <ul id="trade-history-list" class="list-group">
+        <!-- Trade orders will be listed here -->
+      </ul>
+    </div>
+  </div>
+  
+  <script src="app.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
